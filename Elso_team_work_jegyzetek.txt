@@ -1,0 +1,25 @@
+KONCEPCIÓ
+
+#irodai háttért, kávégéhez eljutni & enemy kollégák
+
+Nézet: 
+
+felül vagy majd oldalt
+counter lent, két szélen
+
+Mit kelljen csinálni?
+
+- 2 hero
+- 1 boss (minden dobás után random pozi)
+
+dobálni a tankönyveket
+
+ÖTLETEK
+
+
+- kávéscsésze potyog -> el kell kapni - boost
+- boss dobálja a könyvet -> -skill - counter
+       pl: (if touching)
+
+
+- váltogatni a karaktert
