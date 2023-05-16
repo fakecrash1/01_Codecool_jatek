@@ -23,3 +23,6 @@ dobálni a tankönyveket
 
 
 - váltogatni a karaktert
+
+
+- mozgás megírva (timi)

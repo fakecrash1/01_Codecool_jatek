@@ -41,7 +41,27 @@ function draw() {
     text("Brown\n"+counter1, 25, 375);
     text("Blue\n"+"     "+counter2, 340, 375);
 
+    // controls
 
+    if (keyDown("left") && hero2.x > 35) {
+    hero2.x = hero2.x - speed
 
+    }
+    if (keyDown("right") && hero2.x < 365) {
+        hero2.x = hero2.x + speed
 
-}
+    }
+    if (keyDown("a") && hero1.x > 35) {
+        hero1.x = hero1.x - speed
+        }
+        if (keyDown("d") && hero1.x < 365) {
+        hero1.x = hero1.x + speed
+        }
+    //throw
+    if (keyDown("space")) {
+        book.x = boss.x;
+        book.y = 90;
+        book.visible = true;
+        book.velocityY = speed
+        } 
+};
