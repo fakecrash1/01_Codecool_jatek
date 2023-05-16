@@ -4,7 +4,7 @@
 ### Project: 
 - main branch - https://studio.code.org/projects/gamelab/t2qjCPQz-raleZds4jsZyt7QJnxBce05LFxnZ-qC0IA/edit/#
 - Timi branch - https://github.com/fakecrash1/01_Codecool_jatek/blob/Timi-branch/01_Codecool_Jatek.js
-
+- Szoszo branch - https://github.com/fakecrash1/01_Codecool_jatek/blob/Szoszo-branch/01_Codecool_Jatek.js
 
 
 ## Documentation later
