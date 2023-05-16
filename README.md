@@ -3,7 +3,7 @@
 
 ### Project: 
 main branch - https://studio.code.org/projects/gamelab/t2qjCPQz-raleZds4jsZyt7QJnxBce05LFxnZ-qC0IA/edit/#
-x branch - 
+Timi branch - https://github.com/fakecrash1/01_Codecool_jatek/blob/Timi-branch/01_Codecool_Jatek.js
 
 
 
