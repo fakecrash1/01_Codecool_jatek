@@ -1,0 +1,5 @@
+made two new js;
+
+- `playspeech_function.js` - First test version with welcome sound
+
+- `playspeech_function_2.js` - Rearranged and commented version of `playspeech_function.js` //fakecrash1
