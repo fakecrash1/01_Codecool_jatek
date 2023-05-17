@@ -5,7 +5,7 @@
 - Finished project to play - [https://studio.code.org/projects/gamelab/t2qjCPQz-raleZds4jsZyt7QJnxBce05LFxnZ-qC0IA/edit/#](https://studio.code.org/projects/gamelab/t2qjCPQz-raleZds4jsZyt7QJnxBce05LFxnZ-qC0IA)
 - Timi branch - https://github.com/fakecrash1/01_Codecool_jatek/blob/Timi-branch/01_Codecool_Jatek.js
 
-- Actual Test Version: [https://studio.code.org/projects/gamelab/jn8XbisiBAkPs_j_JSgrK5-i6EIzZPLShItBjy4qhic](Test-version)
+- Actual Test Version: [https://studio.code.org/projects/gamelab/jn8XbisiBAkPs_j_JSgrK5-i6EIzZPLShItBjy4qhic](https://studio.code.org/projects/gamelab/jn8XbisiBAkPs_j_JSgrK5-i6EIzZPLShItBjy4qhic)
 
 ## Documentation 
 
