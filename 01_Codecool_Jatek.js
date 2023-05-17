@@ -85,14 +85,27 @@ function fall(hero) {
     fall(hero2);
   };
 //throw
-  if (keyWentDown("space")) {
-    book.x = boss.x;
-    book.y = 90;
-    book.visible = true;
-    book.velocityY = randomspeed;
-    book.velocityX = randomNumber(-5,5);
-    } else {
-      book.rotation += 5;
-      };
+  setInterval(function() {
+  book.x = boss.x;
+  book.y = book.y+1;
+  book.visible = true;
+  book.velocityY = randomspeed;
+}, 3000);
+  book.rotation += 5
+  
+  if (book.isTouching(hero1)) {
+    book.visible = false;
+    book.x = 200;
+    book.y = 200;
+    book.velocityY = 0;
+    counter1++;
+  }
+  
+  if (book.isTouching(hero2)) {
+    book.visible = false;
+    book.x = 200;
+    book.y = 200;
+    book.velocityY = 0;
+    counter2++;
+  }
 }
-
