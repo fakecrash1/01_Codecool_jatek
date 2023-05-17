@@ -90,7 +90,7 @@ function fall(hero) {
     fall(hero1);
   };
   
-   if (keyDown("up") && hero2.y > 150) {
+  if (keyDown("up") && hero2.y > 150) {
     jump(hero2);
   } else {
     fall(hero2);
