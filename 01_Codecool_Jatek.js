@@ -1,6 +1,10 @@
 background = createSprite(200, 200);
 background.setAnimation("stage_1");
 
+endGame  = createSprite(200, 200);
+endGame.setAnimation("space_1");
+endGame.visible = false;
+
 
 //heroes
 var hero1 = createSprite(50, 290);
@@ -20,11 +24,21 @@ boss.setAnimation("boss");
 
 
 //book
-var book = createSprite(250, 200);
+var book = createSprite(200, 90);
 book.scale = 0.2; //height 31.25px
 book.setAnimation("book_1");
 book.visible = true;
 
+//joy
+var joy =createSprite(50,50);
+joy.setAnimation("joy");
+joy.scale = 0.4;
+joy.visible = false;
+
+// start screen
+welcome = createSprite(200,200);
+welcome.setAnimation("start");
+welcome.scale = 0.15;
 
 //settings
 var speed = 5;
@@ -53,6 +67,11 @@ function fall(hero) {
     hero.y = hero.y + speed;
   }
 }
+function bossLocation() {
+  boss.x = randomNumber(50,350);
+  
+}
+
 
 
 
@@ -79,20 +98,130 @@ function fall(hero) {
     fall(hero1);
   };
   
-   if (keyDown("up") && hero2.y > 150) {
+  if (keyDown("up") && hero2.y > 150) {
     jump(hero2);
   } else {
     fall(hero2);
   };
 //throw
-  if (keyWentDown("space")) {
+function joyLocation() {
+  joy.x = randomNumber(50,350);
+  
+}
+function joyDrop() {
+  joy.velocityY = randomNumber(1,10);
+  joy.velocityX = randomNumber(-5,5);
+  joy.visible = true;
+  joy.y = 40;
+  
+}
+
+  function bookThrow() {
     book.x = boss.x;
     book.y = 90;
     book.visible = true;
-    book.velocityY = randomspeed;
+    book.velocityY = randomNumber(1,10);
     book.velocityX = randomNumber(-5,5);
-    } else {
-      book.rotation += 5;
-      };
+  };
+  
+  if (keyWentDown("space")) {
+    welcome.visible = false;
+    bookThrow();
+    joyDrop();
+  }
+  
+  if (book.isTouching(hero1)) {
+    counter1++;
+    book.visible = false;
+    book.velocityY = 0;
+    book.velocityX = 0;
+    book.x = 0;
+    book.y = 0;
+    bossLocation();
+    bookThrow();
+  };
+  
+  if (book.isTouching(hero2)) {
+    counter2++;
+    book.visible = false;
+    book.velocityY = 0;
+    book.velocityX = 0;
+    bossLocation();
+    bookThrow();
+  };
+  
+  if (book.x < 0 || book.x > 400 || book.y > 400) {
+    bossLocation();
+    bookThrow();
+  };
+  
+  if (counter1 >= 10) {
+    book.x = 0;
+    book.y = 0;
+    joy.x = 0;
+    joy.y = 0;
+    book.visible = false;
+    hero1.visible = false;
+    hero2.visible = false;
+    boss.visible = false;
+    endGame.visible = true;
+    joy.visible =false;
+    fill("white");
+    textAlign(CENTER, TOP);
+    textSize(20);
+    text("Well Done!", 200,200);
+    text("Brown is now a Full-Stack Developer!", 200, 220)
+  }
+  
+    if (counter2 >= 10) {
+    book.x = 0;
+    book.y = 0;
+    joy.x = 0;
+    joy.y = 0;
+    book.visible = false;
+    hero1.visible = false;
+    hero2.visible = false;
+    boss.visible = false;
+    joy.visible = false;
+    endGame.visible = true;
+    fill("white");
+    textAlign(CENTER, TOP);
+    textSize(20);
+    text("Well Done!", 200,200);
+    text("Blue is now a Full-Stack Developer!", 200, 220)
+  }
+
+  if (joy.isTouching(hero1)) {
+    counter1--;
+    joy.visible = false;
+    joy.velocityY = 0;
+    joy.velocityX = 0;
+    joy.x = 0;
+    joy.y = 0;
+    joyDrop();
+    joyLocation();
+  };
+  
+  if (joy.isTouching(hero2)) {
+    counter2--;
+    joy.visible = false;
+    joy.velocityY = 0;
+    joy.velocityX = 0;
+    joyDrop();
+    joyLocation();
+  };
+  
+  if (joy.x < 0 || joy.x > 400 || joy.y > 400) {
+    joyDrop();
+    joyLocation();
+  };
+  
 }
 
+    
+
+
+var date = new Date()
+
+
+console.log(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate())
