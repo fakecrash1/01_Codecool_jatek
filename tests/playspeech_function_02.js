@@ -1,4 +1,5 @@
 /////*****OUT OF DRAW LOOP*****\\\\\
+//World.frameRate = 5
 
 //Welcome user (Hungarian); Sound && Console
 playSpeech("Üdvözöl a 'Kávészünet' csapat. Jó játékot!", "female", "Magyar");
@@ -113,10 +114,11 @@ function fall(hero) {
 var functions = [jump, fall, bossLocation, joyLocation, joyDrop, bookThrow];
 var newFunctions = {};
 for(var i = 0; i < functions.length; i++) {
-    newFunctions["Funkciók: " + (i + 1)] = functions[i];
+    newFunctions["function" + (i + 1)] = functions[i];
 }
 //console log
 console.log(newFunctions);
+
 /***** Storing the functions in an array, and log them in console *****/
 
 
@@ -145,18 +147,6 @@ function draw() {
     var randomspeed = randomNumber (1, 10);    
 
 
-/*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
-
-    //IF GAME ENDS
-    if (gameEnded) {
-        return;
-    }
-/*
-    if (gameOver2) {
-        return;
-    }
-*/
-/*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
 
 
 /// CONTROLS
@@ -180,8 +170,7 @@ function draw() {
     //Jump & Fall
     if (keyDown("w") && hero1.y > 150) {
     jump(hero1);
-    } 
-    else {
+    } else {
     fall(hero1);
     };
 
@@ -300,6 +289,18 @@ function draw() {
         text("Well Done!", 200,200);
         text("Blue is now a Full-Stack Developer!", 200, 220)
     }
+/*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
+
+    //IF GAME ENDS
+    if (gameEnded) {
+        return;
+    }
+/*
+    if (gameOver2) {
+        return;
+    }
+*/
+/*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
 
     //Joystick
     if (joy.isTouching(hero1)) {
