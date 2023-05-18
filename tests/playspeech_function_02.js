@@ -26,7 +26,7 @@ welcome.setAnimation("start");
 welcome.scale = 0.15;
 
 //Default settings
-var speed = 5;
+var speed = 7;
 var counter1 = 0;
 var counter2 = 0;
 
