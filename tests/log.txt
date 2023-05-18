@@ -104,6 +104,3 @@ if (gameEnded == true) {
     }
 }
 ```
-
-
-- új bejegyzés
