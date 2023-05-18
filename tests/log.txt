@@ -104,3 +104,7 @@ if (gameEnded == true) {
     }
 }
 ```
+
+
+
+- Csütörtök, debug, slides
