@@ -113,11 +113,10 @@ function fall(hero) {
 var functions = [jump, fall, bossLocation, joyLocation, joyDrop, bookThrow];
 var newFunctions = {};
 for(var i = 0; i < functions.length; i++) {
-    newFunctions["function" + (i + 1)] = functions[i];
+    newFunctions["Funkciók: " + (i + 1)] = functions[i];
 }
 //console log
 console.log(newFunctions);
-
 /***** Storing the functions in an array, and log them in console *****/
 
 
