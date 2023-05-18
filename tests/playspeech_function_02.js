@@ -1,18 +1,21 @@
 /////*****OUT OF DRAW LOOP*****\\\\\
 
+//Welcome user (Hungarian); Sound && Console
 playSpeech("Üdvözöl a 'Kávészünet' csapat. Jó játékot!", "female", "Magyar");
 
-//Log actual Date to console
+//Log Welcome message and Date to console
 var date = new Date()
-console.log("Today's date is: "+date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate())
+console.log("Welcome Codecool Hungary,\n"+"  "+"Today is: "+date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate());
+console.log("Have a great game! \n\n"+" "+" Some infromation below about functions: \n");
 
-//Background
+//Backgrounds
 background = createSprite(200, 200);
 background.setAnimation("stage_1");
 
 endGame  = createSprite(200, 200);
 endGame.setAnimation("space_1");
 endGame.visible = false;
+
 
 ///VARIABLES
 
@@ -25,6 +28,7 @@ welcome.scale = 0.15;
 var speed = 5;
 var counter1 = 0;
 var counter2 = 0;
+
 
 
 ///CHARACTERS
@@ -103,9 +107,34 @@ function fall(hero) {
 
 
 
+/***** Storing the functions in an array, and log them in console *****/
+
+//storing in array
+var functions = [jump, fall, bossLocation, joyLocation, joyDrop, bookThrow];
+var newFunctions = {};
+for(var i = 0; i < functions.length; i++) {
+    newFunctions["function" + (i + 1)] = functions[i];
+}
+//console log
+console.log(newFunctions);
+
+/***** Storing the functions in an array, and log them in console *****/
+
+
+
+/*****  EXPERIMENTAL - console.log -> Counters - EXPERIMENTAL *****/
+
+var prevCounter1 = -1;
+var prevCounter2 = -1;
+var gameEnded = false;
+
+/*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
+
+
+
 /////*****  DRAW LOOP BEGINS  *****\\\\\
 
-//DRAW LOOP
+///DRAW LOOP
 function draw() {
     drawSprites();
     fill("white")
@@ -116,6 +145,15 @@ function draw() {
 
     var randomspeed = randomNumber (1, 10);    
 
+
+/*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
+
+    //IF GAME ENDS
+    if (gameEnded) {
+        return;
+    }
+
+/*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
 
 
 /// CONTROLS
@@ -150,6 +188,8 @@ function draw() {
     fall(hero2);
     };
 
+
+
 /// GAME MECHANIC
 
     //Start game / PRESS SPACE
@@ -179,6 +219,8 @@ function draw() {
         bossLocation();
         bookThrow();
     };
+
+
 
 ///ITEMS
 
@@ -250,6 +292,35 @@ function draw() {
         joyDrop();
         joyLocation();
         };
+    
+    
+    
+    /*****  EXPERIMENTAL - console.log -> Counters - EXPERIMENTAL *****/
+
+    if (counter1 !== prevCounter1 || counter2 !== prevCounter2) {
+        console.log("\nBrown: "+counter1+"\n"+"Blue: "+counter2);
+        prevCounter1 = counter1;
+        prevCounter2 = counter2;
+    }
+
+    if (counter1 == 10 || counter2 == 10) {
+        if (counter1 == 10) {
+            console.log("\nCongratulations, Brown is the winner!");
+        } else {
+            console.log("\nCongratulations, Blue is the winner!");
+        }
+        gameEnded = true; //GAME OVER
+    }
+
+    if (gameEnded == true) {
+        if (counter1 == 10) {
+            playSpeech("Gratulálok, Barna a nyertes!", "female", "Magyar");
+        } else if (counter2 == 10) {
+            playSpeech("Gratulálok, Kék a nyertes!", "female", "Magyar");
+        }
+    }
+
+    /*****  EXPERIMENTAL - console.log -> Counters - EXPERIMENTAL *****/
+
+
 }
-
-

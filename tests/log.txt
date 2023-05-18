@@ -3,3 +3,104 @@ made two new js;
 - `playspeech_function.js` - First test version with welcome sound
 
 - `playspeech_function_2.js` - Rearranged and commented version of `playspeech_function.js` //fakecrash1
+
+- hát logolni elfelejtettem, de az a lényeg, hogy azon dolgoztam, hogy a konzolban nyomon követhető legyen az eredmény és ez eléggé extra,
+de most vettem észre, hogy már eléggé elment az idő...
+
+- logolás meg gratuláció a nyertesnek
+
+
+
+- itt a txt amiben lemásolgattam a sikeresnek tűnő variációkat:
+
+```
+var functions = [jump, fall, bossLocation, joyLocation, joyDrop, bookThrow];
+
+for(var i = 0; i < functions.length; i++) {
+    console.log("function" + (i + 1), functions[i]);
+}
+_________________________________________________
+
+var functions = [jump, fall, bossLocation, joyLocation, joyDrop, bookThrow];
+var newFunctions = {};
+
+for(var i = 0; i < functions.length; i++) {
+    newFunctions["function" + (i + 1)] = functions[i];
+}
+
+console.log(newFunctions);
+_________________________________________________
+
+//ötlet
+console.log("\nBrown: "+counter1+"\n"+"Blue: "+counter2);
+//problem -> non-stop irja -> kell if counter change value
+_________________________________________________
+
+var prevCounter1 = 0;
+var prevCounter2 = 0;
+
+function draw() {
+    // itt a többi kód
+
+    if (counter1 !== prevCounter1 || counter2 !== prevCounter2) {
+        console.log("\nBrown: "+counter1+"\n"+"Blue: "+counter2);
+        prevCounter1 = counter1;
+        prevCounter2 = counter2;
+    }
+}
+_________________________________________________
+
+/*****  EXPERIMENTAL - console.log -> Counters - EXPERIMENTAL *****/
+    
+if (counter1 !== prevCounter1 || counter2 !== prevCounter2) {
+    console.log("\nBrown: "+counter1+"\n"+"Blue: "+counter2);
+    prevCounter1 = counter1;
+    prevCounter2 = counter2;
+}
+
+if (counter1 == 10) {
+    console.log("\nCongratulations, Brown is the winner!");
+} else if (counter2 == 10) {
+    console.log("\nCongratulations, Blue is the winner!");
+}
+
+/*****  EXPERIMENTAL - console.log -> Counters - EXPERIMENTAL *****/
+_________________________________________________
+
+var prevCounter1 = 0;
+var prevCounter2 = 0;
+var gameEnded = false; // Új változó
+
+function draw() {
+    // Ha a játék véget ért, ne csinálj semmit
+    if (gameEnded) {
+        return;
+    }
+
+    // itt a többi kódod
+
+    if (counter1 !== prevCounter1 || counter2 !== prevCounter2) {
+        console.log("\nBrown: "+counter1+"\n"+"Blue: "+counter2);
+        prevCounter1 = counter1;
+        prevCounter2 = counter2;
+    }
+
+    if (counter1 == 10 || counter2 == 10) {
+        if (counter1 == 10) {
+            console.log("\nCongratulations, Brown is the winner!");
+        } else {
+            console.log("\nCongratulations, Blue is the winner!");
+        }
+        gameEnded = true; // Megjelöljük, hogy a játék véget ért
+    }
+}
+_________________________________________________
+
+if (gameEnded == true) {
+    if (counter1 == 10) {
+        playSpeech("Gratulálok, Brown a nyertes!", "female", "Magyar");
+    } else if (counter2 == 10) {
+        playSpeech("Gratulálok, Blue a nyertes!", "female", "Magyar");
+    }
+}
+```
