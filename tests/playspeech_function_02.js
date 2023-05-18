@@ -127,7 +127,7 @@ console.log(newFunctions);
 var prevCounter1 = -1;
 var prevCounter2 = -1;
 var gameEnded = false;
-
+//var gameOver2 = false;
 /*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
 
 
@@ -152,7 +152,11 @@ function draw() {
     if (gameEnded) {
         return;
     }
-
+/*
+    if (gameOver2) {
+        return;
+    }
+*/
 /*****  EXPERIMENTAL - console.log -> Continue below - EXPERIMENTAL *****/
 
 
@@ -220,6 +224,37 @@ function draw() {
         bookThrow();
     };
 
+    if (counter1 == -5) {
+        book.x = 0;
+        book.y = 0;
+        joy.x=0;
+        joy.y=0;
+        joy.visible=false;
+        book.visible = false;
+        hero1.visible = false;
+        hero2.visible = false;
+        boss.visible = false;
+        endGame.visible = true;
+        fill("white");
+        textAlign(CENTER, TOP);
+        textSize(20);
+        text("Game over :(!", 200,200);
+    } else if (counter2 == -5) {
+        book.x = 0;
+        book.y = 0;
+        joy.x=0;
+        joy.y=0;
+        joy.visible=false;
+        book.visible = false;
+        hero1.visible = false;
+        hero2.visible = false;
+        boss.visible = false;
+        endGame.visible = true;
+        fill("white");
+        textAlign(CENTER, TOP);
+        textSize(20);
+        text("Game over :(!", 200,200);
+    }
 
 
 ///ITEMS
@@ -311,7 +346,17 @@ function draw() {
         }
         gameEnded = true; //GAME OVER
     }
-
+/*
+    if (counter1 == -5 || counter2 == -5) {
+        if (counter1 == -5) {
+            console.log("\nGame Over, Brown is the loser!");
+        } else {
+            console.log("\nGame Over, Blue is the loser!");
+        }
+        endGame.visible = true; //GAME OVER
+        gameOver2 = true; //GAME OVER
+    }
+*/
     if (gameEnded == true) {
         if (counter1 == 10) {
             playSpeech("Gratulálok, Barna a nyertes!", "female", "Magyar");
@@ -319,8 +364,19 @@ function draw() {
             playSpeech("Gratulálok, Kék a nyertes!", "female", "Magyar");
         }
     }
-
+/*
+    if (gameOver2 == true) {
+        if (counter1 == -5) {
+            playSpeech("Game Over, Barna veszített.", "female", "Magyar")
+        } else if (counter2 == -5) {
+            playSpeech("Game Over, Kék veszített.", "female", "Magyar")
+        }
+    }
+*/
     /*****  EXPERIMENTAL - console.log -> Counters - EXPERIMENTAL *****/
 
 
 }
+
+
+
