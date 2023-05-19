@@ -227,7 +227,9 @@ function draw() {
         textAlign(CENTER, TOP);
         textSize(20);
         text("Game over :(!", 200,200);
-    } else if (counter2 == -5) {
+    };
+
+    if (counter2 == -5) {
         book.x = 0;
         book.y = 0;
         joy.x=0;
@@ -347,15 +349,19 @@ function draw() {
         gameEnded = true; //GAME OVER
     }
 
-    if (counter1 == -5 || counter2 == -5) {
-        if (counter1 == -5) {
-            console.log("\nGame Over, Brown is the loser!");
-        } else {
-            console.log("\nGame Over, Blue is the loser!");
-        }
+
+    if (counter1 == -5) {
+        console.log("\nGame Over, Brown is the loser!");
         endGame.visible = true; //GAME OVER
         gameOver2 = true; //GAME OVER
     }
+
+    if (counter2 == -5) {
+        console.log("\nGame Over, Blue is the loser!");
+        endGame.visible = true; //GAME OVER
+        gameOver2 = true; //GAME OVER
+    }
+
 
     if (gameEnded == true) {
         if (counter1 == 10) {
