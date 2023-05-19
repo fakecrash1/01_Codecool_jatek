@@ -4,6 +4,9 @@
 ### Project: 
 - Finished project to play - [https://studio.code.org/projects/gamelab/t2qjCPQz-raleZds4jsZyt7QJnxBce05LFxnZ-qC0IA/edit/#](https://studio.code.org/projects/gamelab/t2qjCPQz-raleZds4jsZyt7QJnxBce05LFxnZ-qC0IA)
 - Timi branch - https://github.com/fakecrash1/01_Codecool_jatek/blob/Timi-branch/01_Codecool_Jatek.js
+<<<<<<< HEAD
+- Szoszo branch - https://github.com/fakecrash1/01_Codecool_jatek/blob/Szoszo-branch/01_Codecool_Jatek.js
+=======
 
 - Actual Test Version: [https://studio.code.org/projects/gamelab/jn8XbisiBAkPs_j_JSgrK5-i6EIzZPLShItBjy4qhic](https://studio.code.org/projects/gamelab/jn8XbisiBAkPs_j_JSgrK5-i6EIzZPLShItBjy4qhic)
 
@@ -32,6 +35,7 @@ End Game: If either hero's counter reaches 10, the game ends. All characters are
 Date Logging: The current date is logged to the console.
 
 Please note that this code seems to be written for a specific game development library that provides functions like createSprite(), setAnimation(), drawSprites(), keyDown(), and isTouching(). Without this library, the code will not work.
+>>>>>>> e2d0591e1e2055f27bfe045e526f8ed1a7d73ec9
 
 
 
